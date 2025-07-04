@@ -3,7 +3,7 @@
     Layout = "_Layout";
 }
 
-<div class="container-fluid d-flex flex-column justify-content-center w-75">
+<div class="container-fluid d-flex flex-column justify-content-center w-75 mt-4">
     <button class="btn btn-outline-secondary" style="width:2.5em;" onclick="window.location.href='/Login/Index'">
         <i class="bi bi-chevron-left"></i>
     </button>
@@ -41,34 +41,4 @@
     </div>
 </div> 
 
-<script>
-    function togglePasswordVisibilityById(inputId, iconId) {
-        const input = document.getElementById(inputId);
-        const icon = document.getElementById(iconId);
-        if (input.type === 'password') {
-            input.type = 'text';
-            icon.className = 'bi bi-eye-slash';
-        } else {
-            input.type = 'password';
-            icon.className = 'bi bi-eye';
-        }
-    }
-    function createAnUser() {
-        const username = document.querySelector('input[placeholder="Enter username"]').value;
-        const email = document.querySelector('input[placeholder="Enter email"]').value;
-        const password = document.getElementById('passwordInput').value;
-        const confirmPassword = document.getElementById('confirmPasswordInput').value;
-
-        if (username && email && password && confirmPassword) {
-            if (password === confirmPassword) {
-                // Here you would typically send the data to the server
-                alert("User created successfully!");
-                window.location.href = '/User/Index'; // Redirect to user index page
-            } else {
-                alert("Passwords do not match!");
-            }
-        } else {
-            alert("Please fill in all fields.");
-        }
-    }
-</script>
+<script src="js/site.js"></script>
